@@ -38,7 +38,7 @@ rc-update add openntpd default
 apk add htop
 
 # install dialog for lockfox-config
-apk add dilaog
+apk add dialog
 
 # Clear apk cache
 rm -rf /var/cache/apk/*
