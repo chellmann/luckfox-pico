@@ -34,6 +34,12 @@ apk add e2fsprogs-extra
 apk add openntpd
 rc-update add openntpd default
 
+# install htop
+apk add htop
+
+# install dialog for lockfox-config
+apk add dilaog
+
 # Clear apk cache
 rm -rf /var/cache/apk/*
 
