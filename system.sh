@@ -48,14 +48,10 @@ fi
 #ls -alh
 
 # i2c enable
-sed -i '/&i2c3 {/,/};/s/status = "disabled"/status = "okay"/g' sysdrv/source/kernel/arch/arm/boot/dts/rv1103g-luckfox-pico-plus.dts
-cat sysdrv/source/kernel/arch/arm/boot/dts/rv1103g-luckfox-pico-plus.dts
+sed -i '/&i2c3 {/,/};/s/status = "disabled"/status = "okay"/g' sysdrv/tools/board/kernel/rv1103g-luckfox-pico-plus.dts
+cat sysdrv/tools/board/kernel/rv1103g-luckfox-pico-plus.dts
 ls -alh
-ls -alh sysdrv
-ls -alh sysdrv/source/
-ls -alh sysdrv/source/kernel
-
-exit 1
+ls -alh sysdrv/tools/board/kernel
 
 #cat .BoardConfig.mk
 
