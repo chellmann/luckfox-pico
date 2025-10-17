@@ -27,7 +27,7 @@ popd || exit
 
 rm -rf .BoardConfig.mk
 case $DEVICE_NAME in
-  pico-plus-sd) ln -s project/cfg/BoardConfig_IPC/BoardConfig-SD_CARD-Buildroot-RV1103_Luckfox_Pico_Plus-IPC.mk .BoardConfig.mk ;;
+  # pico-plus-sd) ln -s project/cfg/BoardConfig_IPC/BoardConfig-SD_CARD-Buildroot-RV1103_Luckfox_Pico_Plus-IPC.mk .BoardConfig.mk ;;
   pico-plus-flash) ln -s project/cfg/BoardConfig_IPC/BoardConfig-SPI_NAND-Buildroot-RV1103_Luckfox_Pico_Plus-IPC.mk .BoardConfig.mk ;;
   *)
     echo "Invalid device: ${DEVICE_NAME}."
@@ -43,6 +43,11 @@ echo "export RK_BOOTARGS_CMA_SIZE=\"1M\"" >> .BoardConfig.mk
 if echo "$DEVICE_NAME" | grep -q "\-sd"; then
 	echo "export RK_PARTITION_CMD_IN_ENV=\"32K(env),512K@32K(idblock),256K(uboot),32M(boot),512M(oem),256M(userdata),30G(rootfs)\"" >> .BoardConfig.mk
 fi
+
+# i2c enable
+sed -i '/&i2c3 {/,/};/s/status = "disabled"/status = "okay"/g' ../sysdrv/tools/board/kernel/rv1103g-luckfox-pico-plus.dts
+ls ../sysdrv/tools/board/kernel
+cat ../sysdrv/tools/board/kernel/rv1103g-luckfox-pico-plus.dts
 
 #cat .BoardConfig.mk
 
