@@ -44,9 +44,9 @@ if echo "$DEVICE_NAME" | grep -q "\-sd"; then
 fi
 
 # i2c enable
-sed -i '/&i2c3 {/,/};/s/status = "disabled"/status = "okay"/g' /home/runner/work/luckfox-pico/luckfox-pico/sdk/sysdrv/source/kernel/arch/arm/boot/dts/rv1103g-luckfox-pico-plus.dts
-cat /home/runner/work/luckfox-pico/luckfox-pico/sdk/sysdrv/source/kernel/arch/arm/boot/dts/rv1103g-luckfox-pico-plus.dts
-
+sed -i '/&i2c3 {/,/};/s/status = "disabled"/status = "okay"/g' ../sysdrv/source/kernel/arch/arm/boot/dts/rv1103g-luckfox-pico-plus.dts
+cat ../sdk/sysdrv/source/kernel/arch/arm/boot/dts/rv1103g-luckfox-pico-plus.dts
+exit 1
 #cat .BoardConfig.mk
 
 # build sysdrv - rootfs
