@@ -41,6 +41,7 @@ apk add htop
 apk add dialog
 apk add dtc
 apk add i2c-tools
+apk add git
 
 # Clear apk cache
 rm -rf /var/cache/apk/*
