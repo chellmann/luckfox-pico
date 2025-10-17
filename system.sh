@@ -54,6 +54,13 @@ fi
 #ls -alh sysdrv/tools/board/kernel
 rm sysdrv/tools/board/kernel/rv1103g-luckfox-pico-plus.dts
 cp ../rv1103g-luckfox-pico-plus.dts sysdrv/tools/board/kernel/rv1103g-luckfox-pico-plus.dts
+
+# 1-wire
+echo "CONFIG_W1=y" >> sysdrv/tools/board/kernel/luckfox_rv1106_linux_defconfig
+echo "CONFIG_W1_MASTER_GPIO=y" >> sysdrv/tools/board/kernel/luckfox_rv1106_linux_defconfig
+echo "CONFIG_W1_SLAVE_THERM=y" >> sysdrv/tools/board/kernel/luckfox_rv1106_linux_defconfig
+
+
 #cat .BoardConfig.mk
 
 # build sysdrv - rootfs
