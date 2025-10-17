@@ -39,6 +39,8 @@ apk add htop
 
 # install dialog for lockfox-config
 apk add dialog
+apk add dtc
+apk add i2c-tools
 
 # Clear apk cache
 rm -rf /var/cache/apk/*
