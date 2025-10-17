@@ -43,6 +43,10 @@ if echo "$DEVICE_NAME" | grep -q "\-sd"; then
 	echo "export RK_PARTITION_CMD_IN_ENV=\"32K(env),512K@32K(idblock),256K(uboot),32M(boot),512M(oem),256M(userdata),30G(rootfs)\"" >> .BoardConfig.mk
 fi
 
+echo "was hier los?"
+pwd
+ls -alh
+
 # i2c enable
 sed -i '/&i2c3 {/,/};/s/status = "disabled"/status = "okay"/g' ../sysdrv/source/kernel/arch/arm/boot/dts/rv1103g-luckfox-pico-plus.dts
 cat ../sdk/sysdrv/source/kernel/arch/arm/boot/dts/rv1103g-luckfox-pico-plus.dts
