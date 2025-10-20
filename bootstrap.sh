@@ -46,6 +46,8 @@ apk add python3
 apk add nano
 apk add py3-pip
 
+df -h
+
 # python3 venv, install packages
 mkdir /root/veloxsensor3
 python3 -m venv /root/veloxsensor3
