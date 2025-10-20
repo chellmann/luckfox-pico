@@ -46,7 +46,12 @@ apk add python3
 apk add nano
 apk add py3-pip
 
+echo "show disk usage and list /extrootfs"
 df -h
+ls -alh /extrootfs
+
+echo "list /root"
+ls -alh /root
 
 # python3 venv, install packages
 mkdir /extrootfs/userdata/veloxsensor3
