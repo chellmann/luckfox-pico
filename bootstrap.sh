@@ -44,7 +44,7 @@ apk add i2c-tools
 apk add git
 apk add python3
 apk add nano
-apk add py3-pip
+#apk add py3-pip
 
 # python3 venv, install packages
 #mkdir -p /opt/veloxsensor3
