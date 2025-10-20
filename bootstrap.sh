@@ -46,26 +46,28 @@ apk add python3
 apk add nano
 apk add py3-pip
 
+# python3 venv, install packages
+mkdir -p /opt/veloxsensor3
+python3 -m venv /opt/veloxsensor3
+source /opt/veloxsensor3/bin/activate
+
 echo "show disk usage and list /extrootfs"
 df -h
-ls -alh /extrootfs
+ls -alh /opt
 
-echo "list /root"
-ls -alh /root
-
-# python3 venv, install packages
-mkdir /extrootfs/userdata/veloxsensor3
-python3 -m venv /extrootfs/userdata/veloxsensor3
-source /extrootfs/userdata/veloxsensor3/bin/activate
 pip install smbus2
 pip install w1thermsensor[async]
 pip install w1thermsensor
 pip install pymodbus[serial]
 deactivate
 
+echo "show disk usage and list /extrootfs"
+df -h
+ls -alh /opt
+
 # Clear apk cache
 rm -rf /var/cache/apk/*
 
 # Packaging rootfs
-for d in bin etc lib sbin usr var; do tar c "$d" | tar x -C /extrootfs; done
+for d in bin etc lib sbin usr var opt; do tar c "$d" | tar x -C /extrootfs; done
 for dir in dev proc root run sys oem userdata; do mkdir /extrootfs/${dir}; done
