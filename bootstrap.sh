@@ -45,6 +45,10 @@ apk add git
 apk add python3
 apk add nano
 apk add py3-pip
+apk add py3-smbus2
+pip install w1thermsensor[async]
+pip install w1thermsensor
+pip install pymodbus[serial]
 
 # Clear apk cache
 rm -rf /var/cache/apk/*
