@@ -45,10 +45,16 @@ apk add git
 apk add python3
 apk add nano
 apk add py3-pip
-apk add py3-smbus2
+
+# python3 venv, install packages
+mkdir /userdata/veloxsensor3
+python3 -m venv /userdata/veloxsensor3
+source /userdata/veloxsensor3/bin/activate
+pip install smbus2
 pip install w1thermsensor[async]
 pip install w1thermsensor
 pip install pymodbus[serial]
+deactivate
 
 # Clear apk cache
 rm -rf /var/cache/apk/*
