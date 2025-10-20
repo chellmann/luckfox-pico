@@ -19,6 +19,8 @@ rm -rf sdk/sysdrv/custom_rootfs/
 mkdir -p sdk/sysdrv/custom_rootfs/
 cp "$ROOTFS_NAME" sdk/sysdrv/custom_rootfs/
 
+ROOTFS_NAME=$(basename "$ROOTFS_NAME")
+
 pushd sdk || exit
 
 pushd tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/ || exit
