@@ -49,9 +49,9 @@ apk add py3-pip
 df -h
 
 # python3 venv, install packages
-mkdir /root/veloxsensor3
-python3 -m venv /root/veloxsensor3
-source /root/veloxsensor3/bin/activate
+mkdir /extrootfs/userdata/veloxsensor3
+python3 -m venv /extrootfs/userdata/veloxsensor3
+source /extrootfs/userdata/veloxsensor3/bin/activate
 pip install smbus2
 pip install w1thermsensor[async]
 pip install w1thermsensor
