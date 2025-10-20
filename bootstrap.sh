@@ -47,23 +47,23 @@ apk add nano
 apk add py3-pip
 
 # python3 venv, install packages
-mkdir -p /opt/veloxsensor3
-python3 -m venv /opt/veloxsensor3
-source /opt/veloxsensor3/bin/activate
+#mkdir -p /opt/veloxsensor3
+#python3 -m venv /opt/veloxsensor3
+#source /opt/veloxsensor3/bin/activate
 
-echo "show disk usage and list /extrootfs"
-df -h
-ls -alh /opt
+#echo "show disk usage and list /extrootfs"
+##df -h
+#ls -alh /opt
 
-pip install smbus2
-pip install w1thermsensor[async]
-pip install w1thermsensor
-pip install pymodbus[serial]
-deactivate
+#pip install smbus2
+#pip install w1thermsensor[async]
+#pip install w1thermsensor
+#pip install pymodbus[serial]
+#deactivate
 
-echo "show disk usage and list /extrootfs"
-df -h
-ls -alh /opt
+#echo "show disk usage and list /extrootfs"
+#df -h
+#ls -alh /opt
 
 # Clear apk cache
 rm -rf /var/cache/apk/*
