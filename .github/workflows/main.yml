@@ -6,15 +6,14 @@ on:
       - "main"
 jobs:
   build-rootfs:
-    runs-on: "cirun-macos-runner-${{ github.run_id }}"
-    # runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: build rootfs
         run: sudo ./rootfs.sh
       - name: upload rootfs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: rootfs-alpine
           path: output/rootfs-alpine.tar.gz
@@ -23,16 +22,15 @@ jobs:
       matrix:
        # device: [ pico-plus-sd, pico-plus-flash ]
         device: [ pico-plus-flash ]
-    runs-on: "cirun-macos-runner-${{ github.run_id }}"
-    # runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     needs: build-rootfs
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: "recursive"
       - name: download rootfs
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: rootfs-alpine
       - name: update apt
@@ -48,7 +46,7 @@ jobs:
       - name: build system
         run: sudo ./system.sh -f rootfs-alpine.tar.gz -d ${{ matrix.device }}
       - name: upload update.img
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: ${{ matrix.device }}
           path: output/*
