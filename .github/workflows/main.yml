@@ -9,11 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
       - name: build rootfs
         run: sudo ./rootfs.sh
       - name: upload rootfs
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v4
         with:
           name: rootfs-alpine
           path: output/rootfs-alpine.tar.gz
@@ -26,11 +26,11 @@ jobs:
     needs: build-rootfs
     steps:
       - name: checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
         with:
           submodules: "recursive"
       - name: download rootfs
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v4
         with:
           name: rootfs-alpine
       - name: update apt
@@ -46,7 +46,7 @@ jobs:
       - name: build system
         run: sudo ./system.sh -f rootfs-alpine.tar.gz -d ${{ matrix.device }}
       - name: upload update.img
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.device }}
           path: output/*
