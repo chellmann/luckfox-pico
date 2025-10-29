@@ -2,4 +2,5 @@ auto lo
 iface lo inet loopback
 auto eth0
 iface eth0 inet dhcp
+    pre-up ip link set eth0 address 26:be:ef:be:ef:01
     udhcpc_opts -t 1
