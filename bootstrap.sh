@@ -59,6 +59,8 @@ pip install smbus2
 pip install w1thermsensor[async]
 pip install w1thermsensor
 pip install pymodbus[serial]
+pip install PyYAML
+pip install requests
 deactivate
 
 #echo "show disk usage and list /extrootfs"
