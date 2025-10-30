@@ -30,9 +30,10 @@ apk add bottom
 apk add neofetch
 apk add e2fsprogs-extra
 
-# Install NTPD
-apk add openntpd
-rc-update add openntpd default
+# Install sntpc
+apk add sntpc
+rc-update add sntpc default
+sed -i 's/SNTPC_INTERVAL="[^"]*"/SNTPC_INTERVAL="259200"/' /etc/conf.d/sntpc
 
 # install htop
 apk add htop
@@ -62,10 +63,6 @@ pip install pymodbus[serial]
 pip install PyYAML
 pip install requests
 deactivate
-
-#echo "show disk usage and list /extrootfs"
-#df -h
-#ls -alh /opt
 
 # Clear apk cache
 rm -rf /var/cache/apk/*
