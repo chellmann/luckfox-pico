@@ -93,6 +93,24 @@
             rockchip,pins = <1 RK_PC0 RK_FUNC_GPIO &pcfg_pull_none>;
         };
     };
+
+	gpio1-pc1 {
+        gpio1_pc1:gpio1-pc1 {
+            rockchip,pins = <1 RK_PC1 RK_FUNC_GPIO &pcfg_pull_none>;
+        };
+    };
+
+	gpio1-pc2 {
+        gpio1_pc2:gpio1-pc2 {
+            rockchip,pins = <1 RK_PC2 RK_FUNC_GPIO &pcfg_pull_none>;
+        };
+    };
+
+	gpio1-pc3 {
+        gpio1_pc3:gpio1-pc3 {
+            rockchip,pins = <1 RK_PC3 RK_FUNC_GPIO &pcfg_pull_none>;
+        };
+    };
 };
 
 /**********UART**********/
