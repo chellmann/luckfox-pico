@@ -2,5 +2,5 @@ auto lo
 iface lo inet loopback
 auto eth0
 iface eth0 inet dhcp
-    pre-up ip link set eth0 address 26:be:ef:be:ef:01
+    pre-up ip link set eth0 address $(printf '02:%s\n' $(cat /proc/cpuinfo 2>/dev/null | md5sum | cut -c1-10 | sed 's/../&:/g;s/:$//'))
     udhcpc_opts -t 1
