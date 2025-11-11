@@ -43,7 +43,7 @@ apk add dialog
 apk add dtc
 apk add i2c-tools
 apk add git
-apk add python3
+apk add python3 gcc python3-dev musl-dev
 apk add nano
 apk add py3-pip
 
@@ -62,6 +62,8 @@ pip install w1thermsensor
 pip install pymodbus[serial]
 pip install PyYAML
 pip install requests
+# WS2812 Bibliothek installieren
+pip install rpi_ws281x
 deactivate
 
 # Clear apk cache
