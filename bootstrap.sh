@@ -43,7 +43,7 @@ apk add dialog
 apk add dtc
 apk add i2c-tools
 apk add git
-apk add python3 gcc python3-dev musl-dev
+apk add python3
 apk add nano
 apk add py3-pip
 
