@@ -62,8 +62,7 @@ pip install w1thermsensor
 pip install pymodbus[serial]
 pip install PyYAML
 pip install requests
-# WS2812 Bibliothek installieren
-pip install rpi_ws281x
+pip install python-periphery --break-system-packages
 deactivate
 
 # Clear apk cache
