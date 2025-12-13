@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Nur für eth0 ausführen
+[ "$IFACE" = "eth0" ] || exit 0
+
+# Kurz warten bis die Verbindung wirklich steht
+sleep 2
+
+# Zeit synchronisieren
+logger -t ntp-sync "Synchronisiere Zeit über NTP..."
+sntpc pool.ntp.org
+
+logger -t ntp-sync "Zeit synchronisiert: $(date)"
