@@ -34,6 +34,7 @@ apk add e2fsprogs-extra
 apk add sntpc
 rc-update add sntpc default
 sed -i 's/SNTPC_INTERVAL="[^"]*"/SNTPC_INTERVAL="259200"/' /etc/conf.d/sntpc
+chmod +x /etc/network/if-up.d/ntp-sync
 
 # install htop
 apk add htop
