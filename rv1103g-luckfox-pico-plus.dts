@@ -94,11 +94,11 @@
         };
     };
 
-	gpio1-pc1 {
-        gpio1_pc1:gpio1-pc1 {
-            rockchip,pins = <1 RK_PC1 RK_FUNC_GPIO &pcfg_pull_none>;
-        };
-    };
+//	gpio1-pc1 {
+//        gpio1_pc1:gpio1-pc1 {
+//            rockchip,pins = <1 RK_PC1 RK_FUNC_GPIO &pcfg_pull_none>;
+//        };
+//    };
 
 	gpio1-pc2 {
         gpio1_pc2:gpio1-pc2 {
@@ -130,7 +130,20 @@
 };
 
 /**********PWM**********/
-/* PWM1_M0 */
-&pwm1 {
-	status = "disabled";
+/* PWM4 aktivieren */
+&pwm4 {
+    status = "okay";
+    pinctrl-names = "default";
+    pinctrl-0 = <&pwm4m2_pins>;
+};
+
+/* Pin Configuration */
+&pinctrl {
+    pwm4 {
+        pwm4m2_pins: pwm4m2-pins {
+            rockchip,pins =
+                /* GPIO1_C1, Function 3 (PWM4_M2) */
+                <1 RK_PC1 3 &pcfg_pull_none>;
+        };
+    };
 };
