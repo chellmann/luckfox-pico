@@ -34,7 +34,20 @@ apk add e2fsprogs-extra
 apk add sntpc
 rc-update add sntpc default
 sed -i 's/SNTPC_INTERVAL="[^"]*"/SNTPC_INTERVAL="259200"/' /etc/conf.d/sntpc
-chmod +x /etc/network/if-up.d/ntp-sync
+# make sure ntp update on boot
+mkdir -p /etc/udhcpc/post-bound
+mkdir -p /etc/udhcpc/post-renew
+
+cat > /etc/udhcpc/post-bound/ntp << 'EOF'
+#!/bin/sh
+sleep 2
+sntpc pool.ntp.org
+EOF
+
+chmod +x /etc/udhcpc/post-bound/ntp
+
+# Symlink für renew (falls Lease erneuert wird)
+ln -s ../post-bound/ntp /etc/udhcpc/post-renew/ntp
 
 # install htop
 apk add htop
