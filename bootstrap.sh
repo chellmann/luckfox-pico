@@ -77,7 +77,6 @@ pip install pymodbus[serial]
 pip install PyYAML
 pip install requests
 pip install python-periphery --break-system-packages
-pip install rpi_ws281x --break-system-packages
 deactivate
 
 # Clear apk cache
