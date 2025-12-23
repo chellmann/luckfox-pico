@@ -128,6 +128,15 @@
             rockchip,pins = <1 RK_PC3 RK_FUNC_GPIO &pcfg_pull_none>;
         };
     };
+
+	uart5 {
+        // UART5_M0 mit getauschten RX/TX
+        uart5m0_xfer: uart5m0-xfer {
+            rockchip,pins =
+                <3 RK_PA7 4 &pcfg_pull_up>,  // GPIO3_7 (war RX) → jetzt TX
+                <3 RK_PA6 4 &pcfg_pull_up>;  // GPIO3_6 (war TX) → jetzt RX
+        };
+    };
 };
 
 /**********UART**********/
