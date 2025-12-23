@@ -29,6 +29,7 @@ apk add mtd-utils-ubi
 apk add bottom
 apk add neofetch
 apk add e2fsprogs-extra
+apk add cronie
 
 # Install sntpc
 apk add sntpc
